@@ -60,7 +60,7 @@ const RandomQuote = () => {
       const data = response.data.quotes;
       const filteredQuotes = data.filter(quote => quote.quote.length < 60);
       
-      if (filteredQuotes.length > 0) {
+      if (filteredQuotes.length < 60) {
         const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
         const randomQuote = filteredQuotes[randomIndex];
         console.log(randomQuote);
