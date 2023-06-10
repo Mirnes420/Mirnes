@@ -58,8 +58,9 @@ const RandomQuote = () => {
       );
     
       const data = response.data.quotes;
-      const filteredQuotes = data.filter(quote => quote.quote.length < 60);
-      
+      // filter for  non-empty quotes
+      const filteredQuotes = data.filter(quote => quote.quote.length > 0);
+      // pick only quotes shorter than 60 characters  to fit perfectly
       if (filteredQuotes.length < 60) {
         const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
         const randomQuote = filteredQuotes[randomIndex];
