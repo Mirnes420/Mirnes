@@ -1,5 +1,6 @@
 import './App.css';
 import RandomQuote from './randomQuote';
+import WeatherApp from './weatherApp';
 import Introduction from './introduction';
 import ContactMe from './contact';
 import Menu from './menu';
@@ -19,8 +20,8 @@ function App() {
     <h1 id='projects'>My Work</h1>
     <hr className='dividor'></hr>
     <div className='project-section flex'>
+    <WeatherApp  className='align'/>
     <RandomQuote  className='align'/>
-      <RandomQuote  className='align'/>
       <br></br>
     </div>
     <div className='contact-section'>

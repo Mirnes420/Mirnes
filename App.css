@@ -79,20 +79,23 @@ body{
 }
 
 .project-name{
-  color:#282c34;
-  text-align: left;
-  padding-top: 2em;
+  color:white;
   font-size: 3em;
   margin-left: 2em;
-  margin-bottom: -1em;
+  margin-bottom: 3%;
+  font-size: larger;
+  margin-top:-20px;
+  border-bottom: 2px solid #a9c2f4;
+  text-align: start;
+  color:#a9c2f4;
 
 }
 
 
 #img-container {
   font-size:2em;
-  width:15em;
-  height:15em;
+  width:70%;
+  height:17em;
   padding:2em ;
   border-radius: 40px;
   margin:3em;
@@ -114,7 +117,7 @@ body{
 
 .flex {
   display: flex;
-  flex-direction:row;
+  flex-direction:column;
   align-items: center;
   justify-content: space-around;
 
@@ -129,12 +132,12 @@ body{
 }
 
 .imgs {
-  border: 2px solid coral;
-  width: 3em;
-  height: 3em;
+  /* border: 2px solid white; */
   margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
+  align-items: center;
+  width:30em;
 
 }
 
@@ -146,31 +149,95 @@ body{
   padding-top: 2em;
   align-items: center;
   border-radius: 40px;
+  text-align: center;
 
 }
 
 #quote {
-  width:3em;
+  width:2em;
+  height:3em;
   color: white;
   font-size: larger;
   margin: auto;
+  margin-left: 2em;
+  
 
 }
 
 #quote-author {
   float: right;
+  color:#a9c2f4;
   margin-right: 15px;
-  color:white;
   font-weight: 400;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   padding:10px;
+  margin-top: 1.5em;
+  
+
+}
+
+
+
+#weather-app {
+  width: 100%;
+  height:15em;
+  margin: 0em;
+  border-radius: 40px;
+  border-top-right-radius: 0%;
+  border-top-left-radius: 0%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align elements to the left */
+  background-image: url('../public/pics/assets/image1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+ 
+}
+
+#weather-data-list {
+  display:flex;
+  margin-left:30%;
+  justify-content: space-around;
+  margin-bottom: auto;
+  flex-direction: row;
+}
+
+
+
+#weather-app li {
+  font-size: 2em;
+  text-align: right;
+  padding: 10px;
+  list-style-type:none;
+}
+
+ ul li a {
+  color:black;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+#weather-heading {
+  font-size: 3em;
+  color:white;
+  margin-left: 1em; 
 
 }
 
 .align{
-  text-align: right;
-  flex-basis: 30%;
-
+  font-size: 2em;
+  color: rgb(40, 44, 52);
+  text-align: right; 
+  margin-right: 1em;
 }
 
 #contact-section{
@@ -208,7 +275,7 @@ body{
 
 }
 
-a {
+#contact-info a {
   color:#a9c2f4;
   text-decoration: none;
   flex-basis: 50%;

@@ -58,9 +58,9 @@ const RandomQuote = () => {
       );
     
       const data = response.data.quotes;
-      const filteredQuotes = data.filter(quote => quote.quote.length < 60);
+      const filteredQuotes = data.filter(quote => quote.quote.length < 80);
       
-      if (filteredQuotes.length < 60) {
+      if (filteredQuotes.length < 80) {
         const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
         const randomQuote = filteredQuotes[randomIndex];
         console.log(randomQuote);
@@ -76,12 +76,12 @@ const RandomQuote = () => {
 
   return (
     <div >
-      <h1 className='project-name'>Random quote generator</h1>
     <div id='img-container' className="imgs" style={{ backgroundImage: `url(${backgroundImageUrl})` }}>
+   
       <div id='quote-container'>
-      <blocquote id='quote' >{quote.quote}</blocquote>
-      <p id='quote-author'>{quote.author}</p>
-      </div>
+      <h1 className='project-name'>Random quote generator</h1>
+      <blocquote id='quote' >"{quote.quote}"</blocquote>
+      <a href={`https://en.wikipedia.org/wiki/${quote.author}`} target="_blank" id='quote-author'>{quote.author}</a></div>
     <div id='projects'></div>
     </div>
     </div>
