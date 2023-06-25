@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const WeatherApp = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const apiKey = '780962011a904cd9a17120648231306'; // Replace with your WeatherAPI API key
+  const apiKey = '780962011a904cd9a17120648231306'; 
 
   useEffect(() => {
     // Fetch weather data based on user's location
