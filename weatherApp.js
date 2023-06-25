@@ -33,9 +33,9 @@ const WeatherApp = () => {
         console.error('Geolocation is not supported by this browser.');
       }
     };
-
     getUserLocation();
   }, [apiKey]);
+
 
   if (!weatherData) {
     return <div>Loading...</div>;
@@ -44,12 +44,12 @@ const WeatherApp = () => {
   return (
     <div id='weather-app' className='container'>
     <h1 id='weather-heading'>Weather Information</h1>
-    <ul id='weather-data-list' >
-  <li className='align'><a href="https://www.msn.com/en-us/weather/forecast/in-?loc=eyJ0IjoxLCJ4IjoxNi40NDEsInkiOjQzLjUxfQ%3d%3d&ocid=ansmsnweather" alt="See a complete weather forecast"target="_blank" >{weatherData.location.name}, {weatherData.location.country}</a></li>
-  <li>{weatherData.current.temp_c}°C</li>
-  <li>{weatherData.current.condition.text}</li>
-      {/* Additional weather data can be displayed here */}
+    <ul className='weather-data-list' >
+  <li className='align'>{weatherData.location.name}, {weatherData.location.country}</li>
+  <li className='align'>{weatherData.current.temp_c}°C</li>
+  <li className='align'>{weatherData.current.condition.text}</li>
       </ul>
+      <a id="see-more" href="https://www.msn.com/en-us/weather/forecast/in-?loc=eyJ0IjoxLCJ4IjoxNi40NDEsInkiOjQzLjUxfQ%3d%3d&ocid=ansmsnweather" alt="See a complete weather forecast"target="_blank" >see full weather forecast here</a>
     </div>
   );
 };

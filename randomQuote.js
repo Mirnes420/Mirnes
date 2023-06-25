@@ -14,7 +14,7 @@ const RandomQuote = () => {
     const intervalId = setInterval(() => {
       fetchBackgroundImage();
       fetchQuote();
-    }, 20000);
+    }, 8000);
 
     // Clean up the interval when the component unmounts
     return () => {
@@ -80,11 +80,13 @@ const RandomQuote = () => {
    
       <div id='quote-container'>
       <h1 className='project-name'>Random quote generator</h1>
-      <blocquote id='quote' >"{quote.quote}"</blocquote>
+      <blockquote id='quote' >"{quote.quote}"</blockquote>
       <a href={`https://en.wikipedia.org/wiki/${quote.author}`} target="_blank" id='quote-author'>{quote.author}</a></div>
+    
     <div id='projects'></div>
     </div>
     </div>
+    
   );
 };
 
