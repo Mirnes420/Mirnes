@@ -1,9 +1,9 @@
 import './App.css';
-import RandomQuote from './randomQuote';
-import WeatherApp from './weatherApp';
-import Introduction from './introduction';
-import ContactMe from './contact';
-import Menu from './menu';
+import RandomQuote from './views/randomQuote';
+import WeatherApp from './views/weatherApp';
+import Introduction from './views/introduction';
+import ContactMe from './views/contact';
+import Menu from './views/menu';
 
 function App() {
   return (
