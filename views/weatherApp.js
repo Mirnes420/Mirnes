@@ -49,6 +49,7 @@ const WeatherApp = () => {
   <li className='align'>{weatherData.current.temp_c}°C</li>
   <li className='align'>{weatherData.current.condition.text}</li>
       </ul>
+      <hr />
       <a id="see-more" href="https://www.msn.com/en-us/weather/forecast/in-?loc=eyJ0IjoxLCJ4IjoxNi40NDEsInkiOjQzLjUxfQ%3d%3d&ocid=ansmsnweather" alt="See a complete weather forecast"target="_blank" >see full weather forecast here</a>
     </div>
   );

@@ -1,6 +1,5 @@
 import '../App.css';
 import React, {useEffect, useState} from 'react';
-import axios from 'axios';
 
 const RandomQuote = () => {
   const [backgroundImageUrl, setBackgroundImageUrl] = useState('');
@@ -53,25 +52,31 @@ const RandomQuote = () => {
   };
   const fetchQuote = async () => {
     try {
-      const response = await axios.get(
+      const response = await fetch(
         'https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json'
       );
-    
-      const data = response.data.quotes;
-      const filteredQuotes = data.filter(quote => quote.quote.length < 80);
       
-      if (filteredQuotes.length < 80) {
-        const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
-        const randomQuote = filteredQuotes[randomIndex];
-        console.log(randomQuote);
-        setQuote(randomQuote);
+      if (response.ok) {
+        const data = await response.json();
+        const quotes = data.quotes;
+        const filteredQuotes = quotes.filter(quote => quote.quote.length < 80);
+  
+        if (filteredQuotes.length > 0) {
+          const randomIndex = Math.floor(Math.random() * filteredQuotes.length);
+          const randomQuote = filteredQuotes[randomIndex];
+          console.log(randomQuote);
+          setQuote(randomQuote);
+        } else {
+          console.log("No quotes found with length less than 80 characters.");
+        }
       } else {
-        console.log("No quotes found with length less than 60 characters.");
+        console.error("Request failed with status:", response.status);
       }
     } catch (error) {
       console.error(error);
     }
   };
+  
   
 
   return (
